@@ -6,6 +6,7 @@ export MARIADB_PASS="password"
 export MARIADB_HOST="localhost"
 export MARIADB_DBNAME="wordpress"
 
+#DEBUG: php-fpm should be included into the image because it takes more time
 echo "[+] Installing php-fpm"
 apt update
 apt install wget -y php php-fpm 
@@ -15,6 +16,8 @@ mkdir -p /run/php
 apt clean
 
 echo "[+] Installing wordpress"
+
+# should run the download of wordpress inside the image so that wordpress setup will run much faster
 
 cd /tmp
 wget http://wordpress.org/latest.tar.gz
@@ -35,6 +38,5 @@ echo "[+] Installing wordpress complete."
 else
     echo "[-] Downloading wordpress failed."
 fi
-
 
 php-fpm7.4 -F -R
