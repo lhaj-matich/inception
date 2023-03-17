@@ -5,4 +5,4 @@ WORKDIR /var/www/html
 COPY ./conf/nginx.conf /etc/nginx/
 COPY ./assets .
 EXPOSE 80
-CMD ["nginx -s reload"]
+CMD ["nginx", "-g", "daemon off;"]

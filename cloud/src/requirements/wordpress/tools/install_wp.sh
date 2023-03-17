@@ -8,8 +8,9 @@ export MARIADB_DBNAME="wordpress"
 
 echo "[+] Installing php-fpm"
 apt update
-apt install wget -y php php-fpm php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
-sed -i "s/\/run\/php\/php7.4-fpm.sock/127.0.0.1:9000/g" /etc/php/7.4/fpm/pool.d/www.conf
+apt install wget -y php php-fpm 
+# apt install php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
+sed -i "s/\/run\/php\/php7.4-fpm.sock/0.0.0.0:9000/g" /etc/php/7.4/fpm/pool.d/www.conf
 mkdir -p /run/php
 apt clean
 
