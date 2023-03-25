@@ -1,24 +1,22 @@
 #!/bin/sh
 
 #DEBUG: need to remove later because these are going to set by docker compose.
-export MARIADB_USER="ochoumou"
-export MARIADB_PASS="password"
-export MARIADB_HOST="localhost"
+export MARIADB_USER="wp_user"
+export MARIADB_PASS="biden_1234"
+export MARIADB_HOST="mariadb:3306"
 export MARIADB_DBNAME="wordpress"
 
 #DEBUG: php-fpm should be included into the image because it takes more time
 echo "[+] Installing php-fpm"
 apt update
-apt install wget -y php php-fpm 
-# apt install php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
-sed -i "s/\/run\/php\/php7.4-fpm.sock/0.0.0.0:9000/g" /etc/php/7.4/fpm/pool.d/www.conf
+apt install -y wget  php php-fpm php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip php-mysql
 mkdir -p /run/php
+sed -i "s/\/run\/php\/php7.4-fpm.sock/0.0.0.0:9000/g" /etc/php/7.4/fpm/pool.d/www.conf
 apt clean
 
 echo "[+] Installing wordpress"
 
 # should run the download of wordpress inside the image so that wordpress setup will run much faster
-
 cd /tmp
 wget http://wordpress.org/latest.tar.gz
 if test -f "latest.tar.gz"; then
