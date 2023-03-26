@@ -11,8 +11,8 @@ fi
 # Create a new wordpress database
 mariadb -e "CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 # Create a new user called raptor
-mariadb -e "GRANT ALL ON wordpress.* TO 'raptor'@'localhost' IDENTIFIED BY 'biden_1234';"
+mariadb -e "GRANT ALL ON wordpress.* TO 'raptor'@'%' IDENTIFIED BY 'biden_1234';"
 # Create a new user called wp_user
-mariadb -e "GRANT ALL ON wordpress.* TO 'wp_user'@'localhost' IDENTIFIED BY 'biden_1234';"
+mariadb -e "GRANT ALL ON wordpress.* TO 'wp_user'@'%' IDENTIFIED BY 'biden_1234';"
 # Commit the changes
 mariadb -e "FLUSH PRIVILEGES;"

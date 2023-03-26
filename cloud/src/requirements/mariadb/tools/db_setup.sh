@@ -8,7 +8,7 @@ if [ $RESULT -eq 0 ]; then
   service mariadb start
 fi
 # Delete anonymous users
-mariadb -e "DELETE FROM mysql.user WHERE user='';"
+# mariadb -e "DELETE FROM mysql.user WHERE user='';"
 # Ensure the root user can not log in remotely
 mariadb -e "DELETE FROM mysql.user WHERE user='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');"
 # Remove the test database
