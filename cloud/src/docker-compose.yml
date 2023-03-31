@@ -2,6 +2,7 @@ version: '3'
 
 services:
   mariadb:
+    container_name: mariadb
     build: ./requirements/mariadb
     volumes:
       - maria_database:/var/lib/mysql
@@ -12,6 +13,7 @@ services:
       - inception
   
   nginx:
+    container_name: nginx
     build: ./requirements/nginx
     volumes:
       - wp_data:/var/www/html
@@ -24,6 +26,7 @@ services:
       - inception
 
   wordpress:
+    container_name: wordpress
     build: ./requirements/wordpress
     environment:
       MARIADB_DBNAME: wordpress
@@ -49,12 +52,12 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/sn4r7/42/docker/mysql
       o: bind
+      device: /home/ochoumou/inception-data/wordpress
   maria_database:
     driver: local
     driver_opts:
       type: none
-      device: /home/sn4r7/42/docker/wordpress
       o: bind
+      device: /home/ochoumou/inception-data/mysql
 
