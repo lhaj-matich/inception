@@ -9,6 +9,7 @@ if [ $RESULT -eq 0 ]; then
 fi
 
 # Create a new wordpress database
+# ! I should check if the database exists first.
 mariadb -e "CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 # Create a new user called raptor
 mariadb -e "GRANT ALL ON wordpress.* TO 'raptor'@'%' IDENTIFIED BY 'biden_1234';"

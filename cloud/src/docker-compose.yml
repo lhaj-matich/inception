@@ -5,7 +5,7 @@ services:
     container_name: mariadb
     build: ./requirements/mariadb
     volumes:
-      - maria_database:/var/lib/mysql
+      - mariadb:/var/lib/mysql
     ports:
       - 3306:3306
     restart: always
@@ -16,7 +16,7 @@ services:
     container_name: nginx
     build: ./requirements/nginx
     volumes:
-      - wp_data:/var/www/html
+      - wpdata:/var/www/html/wordpress
     ports:
       - 443:443
     restart: always
@@ -34,7 +34,7 @@ services:
       MARIADB_PASS: biden_1234
       MARIADB_HOST: mariadb:3306
     volumes:
-      - wp_data:/var/www/html
+      - wpdata:/var/www/html/wordpress
     depends_on:
       - mariadb
     ports:
@@ -43,18 +43,29 @@ services:
     networks:
       - inception
 
+    adminer:
+      container_name: adminer
+      build: ./requirements/bonus/adminer
+      depends_on:
+        - mariadb
+      ports:
+        - 9000:9000
+      restart: always
+      networks:
+        -inception
+
 networks:
   inception:
     driver: bridge
 
 volumes:
-  wp_data:
+  wpdata:
     driver: local
     driver_opts:
       type: none
       o: bind
       device: /home/ochoumou/inception-data/wordpress
-  maria_database:
+  mariadb:
     driver: local
     driver_opts:
       type: none

@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#! Check no to run this script everytime the container starts.
 #DEBUG: need to remove later because these are going to set by docker compose.
 export MARIADB_USER="wp_user"
 export MARIADB_PASS="biden_1234"
@@ -24,8 +25,8 @@ sed -i "s/localhost/$MARIADB_HOST/g" /var/www/html/wordpress/wp-config-sample.ph
 #DEBUG: check that the variables are getting replaced by sed.
 cp /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-config.php
 else
-    echo "[-] Downloading wordpress failed."
+    echo "Downloading wordpress failed."
 fi
 
-echo "[+] php-fpm listenning on 9000."
+echo "php-fpm listenning on 9000."
 exec php-fpm7.4 -F -R
