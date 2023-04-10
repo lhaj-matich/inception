@@ -6,5 +6,5 @@ WORKDIR /tmp
 COPY ./tools/docker_entry.sh .
 RUN chmod +x docker_entry.sh
 
-EXPOSE 9000
+EXPOSE 9001
 ENTRYPOINT [ "./docker_entry.sh" ]
