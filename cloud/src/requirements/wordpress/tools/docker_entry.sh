@@ -28,5 +28,5 @@ else
     echo "Downloading wordpress failed."
 fi
 
-echo "php-fpm listenning on 9000."
+echo "Wordpress is listenning on port 9001"
 exec php-fpm7.4 -F -R
