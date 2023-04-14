@@ -1,11 +1,11 @@
-FROM alpine:3.17.2
+FROM debian:11.6
 
-RUN apk add vsftpd openssl
+RUN apt update && apt install vsftpd openssl -y
 RUN mkdir -p /var/www/html
 
 WORKDIR /tmp
 
-COPY ./conf/vsftpd.conf /etc/vsftpd/vsftpd.conf
+COPY ./conf/vsftpd.conf /etc/vsftpd.conf
 COPY ./tools/docker_entry.sh .
 
 RUN chmod +x ./docker_entry.sh
