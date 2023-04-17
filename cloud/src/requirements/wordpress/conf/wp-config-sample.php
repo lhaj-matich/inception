@@ -63,16 +63,13 @@ define( 'NONCE_SALT',       'put your unique phrase here' );
  */
 
 /**#@-*/
-
 define('WP_CACHE', true);
+define('WP_REDIS_CLIENT', 'phpredis');
+define('WP_REDIS_SCHEME', 'tcp');
 define('WP_REDIS_HOST', 'redis');
 define('WP_REDIS_PORT', '6379');
 define('WP_REDIS_DATABASE', '0');
-define('WP_REDIS_PASSWORD', '');
-define('WP_REDIS_SCHEME', 'tcp');
-define('WP_REDIS_TIMEOUT', '1.5');
-define('WP_REDIS_READ_TIMEOUT', '1.5');
-define('WP_REDIS_PERSISTENT', true);
+define('WP_CACHE_KEY_SALT', 'ochoumou.42.fr');
 
 /**
  * WordPress database table prefix.

@@ -30,6 +30,7 @@ if test -f "latest.tar.gz"; then
     unzip -q redis-cache.latest-stable.zip -d /var/www/html/wordpress/wp-content/plugins/
     #DEBUG: check that the variables are getting replaced by sed.
     cp /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-config.php
+    chown -R www-data:www-data /var/www/html/wordpress
 else
     echo "Downloading wordpress failed."
 fi
