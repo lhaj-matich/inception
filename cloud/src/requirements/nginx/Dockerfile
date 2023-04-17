@@ -1,5 +1,5 @@
 FROM alpine:3.17.2
-RUN apk update && apk add nginx && apk add openssl
+RUN apk update && apk add nginx openssl
 
 WORKDIR /var/www/html/wordpress
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
