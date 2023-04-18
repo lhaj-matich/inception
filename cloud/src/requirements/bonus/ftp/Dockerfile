@@ -1,7 +1,7 @@
 FROM debian:11.6
 
 RUN apt update && apt install vsftpd openssl -y
-RUN mkdir -p /var/www/html
+RUN mkdir -p /var/www/html/wordpress
 
 WORKDIR /tmp
 

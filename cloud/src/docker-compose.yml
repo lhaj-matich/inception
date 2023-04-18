@@ -22,6 +22,7 @@ services:
     restart: always
     depends_on:
       - wordpress
+      - cadvisor
     networks:
       - inception
 
@@ -54,11 +55,36 @@ services:
     networks:
       - inception
 
+  cadvisor:
+    container_name: cadvisor
+    build: ./requirements/bonus/cadvisor
+    ports:
+      - 8080:8080
+    restart: always
+    networks:
+      - inception
+
   redis:
     container_name: redis
     build: ./requirements/bonus/redis
     ports:
       - 6379:6379
+    restart: always
+    networks:
+      - inception
+
+  ftp:
+    container_name: ftp
+    build: ./requirements/bonus/ftp
+    depends_on:
+      - nginx
+      - wordpress
+      - mariadb
+    volumes:
+      - wpdata:/var/www/html/wordpress
+    ports:
+      - 21:21
+      - 50000-50010:50000-50010
     restart: always
     networks:
       - inception
