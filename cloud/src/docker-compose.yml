@@ -93,7 +93,7 @@ services:
       - wpdata:/var/www/html/wordpress
     ports:
       - 21:21
-      - 50000-50010:50000-50010
+      - "50000-50010:50000-50010"
     restart: always
     networks:
       - inception
