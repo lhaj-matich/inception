@@ -10,7 +10,8 @@ COPY ./conf/nginx.conf /etc/nginx/
 COPY ./conf/proxy_params /etc/nginx/
 COPY ./conf/self-signed.conf /etc/nginx/snippets/
 COPY ./conf/ssl-params.conf /etc/nginx/snippets/
-# The command bellow is just for testing purposes.
+# The command bellow is just for testing purposes...
 COPY ./assets .
 EXPOSE 443
+# This command will run nginx in no demaon mode...
 CMD ["nginx", "-g", "daemon off;"]

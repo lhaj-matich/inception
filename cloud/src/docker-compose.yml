@@ -22,7 +22,7 @@ services:
     restart: always
     depends_on:
       - wordpress
-      - cadvisor
+      - static
     networks:
       - inception
 
@@ -55,11 +55,20 @@ services:
     networks:
       - inception
 
-  cadvisor:
-    container_name: cadvisor
-    build: ./requirements/bonus/cadvisor
+  # cadvisor:
+  #   container_name: cadvisor
+  #   build: ./requirements/bonus/cadvisor
+  #   ports:
+  #     - 8080:8080
+  #   restart: always
+  #   networks:
+  #     - inception
+
+  static:
+    container_name: static
+    build: ./requirements/bonus/static
     ports:
-      - 8080:8080
+      - 80:80
     restart: always
     networks:
       - inception

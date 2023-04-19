@@ -7,6 +7,7 @@ WORKDIR /tmp
 COPY ./tools/docker_entry.sh .
 COPY ./conf/wp-config-sample.php .
 RUN wget http://wordpress.org/latest.tar.gz
+RUN wget https://downloads.wordpress.org/plugin/redis-cache.latest-stable.zip
 RUN chmod +x docker_entry.sh
 
 EXPOSE 9000

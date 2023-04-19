@@ -12,4 +12,5 @@ RUN chmod +x ./docker_entry.sh
 
 EXPOSE 21
 EXPOSE 50000-50010
+
 ENTRYPOINT [ "./docker_entry.sh" ]

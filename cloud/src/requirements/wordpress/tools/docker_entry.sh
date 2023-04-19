@@ -24,8 +24,6 @@ if test -f "latest.tar.gz"; then
     sed -i "s/localhost/$MARIADB_HOST/g" /var/www/html/wordpress/wp-config-sample.php
 
     #! Further check here not to download and extract the plugin twice.
-    echo "Downloading redis plugin."
-    wget https://downloads.wordpress.org/plugin/redis-cache.latest-stable.zip
     echo "Extracting plugin."
     unzip -q redis-cache.latest-stable.zip -d /var/www/html/wordpress/wp-content/plugins/
     #DEBUG: check that the variables are getting replaced by sed.
