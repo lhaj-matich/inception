@@ -1,17 +1,16 @@
-FROM debian:11.6
+FROM alpine:3.17.3
 
-RUN apt update && apt install vsftpd openssl -y
+RUN	apk update && apk add --no-cache vsftpd shadow openssl
 RUN mkdir -p /var/www/html/wordpress
 
 WORKDIR /tmp
 
-# COPY ./conf/vsftpd.conf /etc/vsftpd.conf
+COPY ./conf/vsftpd.conf /etc/vsftpd.conf
 COPY ./tools/docker_entry.sh .
 
-RUN chmod +x ./docker_entry.sh && ./docker_entry.sh
+RUN chmod +x ./docker_entry.sh
 
 EXPOSE 21
 EXPOSE 50000-50010
 
-#
-CMD [ "vsftpd"]
+ENTRYPOINT [ "./docker_entry.sh" ]
