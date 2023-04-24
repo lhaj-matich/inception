@@ -30,6 +30,4 @@ if [ ! -e "/var/www/html/wordpress/wp-config.php" ]; then
     cp /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-config.php
 fi
 
-echo "Wordpress is listenning on port 9000"
 chown -R www-data:www-data /var/www/html/wordpress
-exec php-fpm7.4 -F -R

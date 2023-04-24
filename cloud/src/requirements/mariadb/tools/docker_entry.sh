@@ -12,4 +12,3 @@ sleep ${SLEEP_TIME}
 # Stop mariadb service
 service mariadb stop
 # Start mariadb server in the foreground
-mariadbd --bind-address=0.0.0.0 --silent-startup

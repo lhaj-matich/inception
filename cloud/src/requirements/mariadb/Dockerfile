@@ -7,6 +7,7 @@ COPY ./tools/docker_entry.sh .
 COPY ./conf/my.cnf /etc/mysql/
 
 RUN chmod +x docker_entry.sh
+RUN ./docker_entry.sh
 
 EXPOSE 3306
-ENTRYPOINT [ "./docker_entry.sh" ]
+ENTRYPOINT ["mariadbd", "--bind-address=0.0.0.0", "--silent-startup"]

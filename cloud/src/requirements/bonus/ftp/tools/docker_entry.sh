@@ -18,6 +18,6 @@ if [ ! -e /etc/vsftp_status ]; then
 fi
 
 # exec vsftpd
-/usr/sbin/vsftpd
 echo "FTP is listenning on port 21"
+/usr/sbin/vsftpd
 # Start the vsftp server in the forground
