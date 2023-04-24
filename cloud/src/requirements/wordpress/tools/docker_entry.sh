@@ -12,7 +12,8 @@ mkdir -p /run/php
 sed -i "s/\/run\/php\/php7.4-fpm.sock/0.0.0.0:9000/g" /etc/php/7.4/fpm/pool.d/www.conf
 
 #! maybe i should change the file that am testing for i mean latest.tar.gz
-if test -f "latest.tar.gz"; then
+if [ ! -e "/var/www/html/wordpress/wp-config.php" ]; then
+    echo "Extracting wordpress."
     tar xfz latest.tar.gz
     mkdir -p /var/www/html/wordpress/
     cp -r wordpress/* /var/www/html/wordpress/
@@ -24,15 +25,11 @@ if test -f "latest.tar.gz"; then
     sed -i "s/localhost/$MARIADB_HOST/g" /var/www/html/wordpress/wp-config-sample.php
 
     #! Further check here not to download and extract the plugin twice.
-    echo "Extracting plugin."
+    echo "Extracting Redis plugin."
     unzip -q redis-cache.latest-stable.zip -d /var/www/html/wordpress/wp-content/plugins/
-    #DEBUG: check that the variables are getting replaced by sed.
     cp /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-config.php
-    chown -R www-data:www-data /var/www/html/
-    echo "Configuring wordpress again."
-else
-    echo "Downloading wordpress failed."
 fi
 
 echo "Wordpress is listenning on port 9000"
+chown -R www-data:www-data /var/www/html/wordpress
 exec php-fpm7.4 -F -R

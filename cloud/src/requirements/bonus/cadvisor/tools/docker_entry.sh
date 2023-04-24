@@ -10,6 +10,6 @@ if [ ! -e $CADPATH/cadvisor ]; then
 fi
 
 echo "cadvisor is listenning on port 8080"
-# # Here should be always executing.
+
 export PATH=$PATH:$CADPATH
-exec cadvisor
+exec cadvisor --logtostderr=false > /dev/null

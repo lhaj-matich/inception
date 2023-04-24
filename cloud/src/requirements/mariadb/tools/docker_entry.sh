@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SLEEP_TIME="3"
+SLEEP_TIME="2"
 
 # Allow execute permissions to these scripts
 chmod +x db_setup.sh
@@ -12,4 +12,4 @@ sleep ${SLEEP_TIME}
 # Stop mariadb service
 service mariadb stop
 # Start mariadb server in the foreground
-mariadbd --bind-address=0.0.0.0
+mariadbd --bind-address=0.0.0.0 --silent-startup
