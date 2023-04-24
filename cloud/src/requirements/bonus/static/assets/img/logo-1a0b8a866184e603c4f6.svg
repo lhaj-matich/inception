@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
+<desc>Created with Fabric.js 5.2.4</desc>
+<defs>
+    <linearGradient id="bones-gradient" x1="100%" y1="100%" x2="100%" y2="0%">
+      <stop offset="10%" style="stop-color:#C55555;" />
+      <stop offset="100%" style="stop-color:#776FD5;" />
+    </linearGradient>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
+<g transform="matrix(1 0 0 1 540 540)" id="e070fdc6-e7d4-4018-9639-98a5166416de"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
+</g>
+<g transform="matrix(1 0 0 1 540 540)" id="edb8ca42-a47b-411b-934f-84babfab6092"  >
+</g>
+<g transform="matrix(2.73 0 0 2.73 549.03 533.17)"  >
+<path  style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 10; fill: url(#bones-gradient); fill-rule: nonzero; opacity: 1;"  transform=" translate(-197.76, -123.6)" d="M 36.847 245.932 C 18.830000000000002 245.932 6.885000000000002 246.308 1.0129999999999981 247.06099999999998 L 1.0129999999999981 171.702 L 51.525999999999996 171.702 L 51.525999999999996 201.817 L 89.619 201.817 C 100.61 201.817 109.418 201.441 116.042 200.68800000000002 C 115.18900000000001 229.395 114.762 244.30100000000002 114.763 245.40500000000003 L 114.763 247.21200000000002 C 102.768 246.359 82.618 245.93200000000002 54.312000000000005 245.93200000000002 z M 1.013 0.365 C 3.9739999999999998 1.1179999999999999 10.072 1.494 19.305999999999997 1.494 C 28.54 1.494 39.281 1.2429999999999999 51.525999999999996 0.741 L 51.525999999999996 75.498 L 1.0129999999999981 75.498 z M 225.426 247.061 C 219.55399999999997 246.30800000000002 208.237 245.93200000000002 191.474 245.93200000000002 L 176.719 245.93200000000002 L 176.719 171.702 L 225.426 171.702 z M 176.719 0.741 C 184.548 1.2429999999999999 193.18 1.494 202.61599999999999 1.494 C 212.051 1.494 218.75099999999998 0.992 222.71599999999998 -0.01200000000000001 L 267.133 75.498 L 176.719 75.498 z M 343.768 -0.012 C 347.73299999999995 0.992 355.21099999999996 1.494 366.202 1.494 C 377.243 1.494 386.678 1.2429999999999999 394.507 0.741 L 394.507 75.498 L 301.084 75.498 z M 394.507 245.932 L 379.827 245.932 C 363.014 245.932 351.672 246.308 345.8 247.06099999999998 L 345.8 171.702 L 394.507 171.702 z M 285.726 189.847 L 274.657 171.702 L 295.866 171.702 z" stroke-linecap="round" />
+</g>
+</svg>

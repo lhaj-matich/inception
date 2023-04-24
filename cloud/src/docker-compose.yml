@@ -23,6 +23,7 @@ services:
     depends_on:
       - wordpress
       - static
+      - cadvisor
     networks:
       - inception
 
@@ -55,20 +56,29 @@ services:
     networks:
       - inception
 
-  # cadvisor:
-  #   container_name: cadvisor
-  #   build: ./requirements/bonus/cadvisor
-  #   ports:
-  #     - 8080:8080
-  #   restart: always
-  #   networks:
-  #     - inception
+  cadvisor:
+    container_name: cadvisor
+    build: ./requirements/bonus/cadvisor
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    depends_on:
+      - wordpress
+      - mariadb
+    ports:
+      - 8080:8080
+    restart: always
+    networks:
+      - inception
 
   static:
     container_name: static
     build: ./requirements/bonus/static
     ports:
-      - 80:80
+      - 2500:2500
     restart: always
     networks:
       - inception
@@ -76,6 +86,10 @@ services:
   redis:
     container_name: redis
     build: ./requirements/bonus/redis
+    depends_on:
+      - wordpress
+      - nginx
+      - mariadb
     ports:
       - 6379:6379
     restart: always

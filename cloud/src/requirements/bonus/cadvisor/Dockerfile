@@ -9,7 +9,7 @@ COPY ./tools/docker_entry.sh .
 RUN chmod +x docker_entry.sh
 
 EXPOSE 8080
-# ENTRYPOINT [ "./docker_entry.sh" ]
+ENTRYPOINT [ "./docker_entry.sh" ]
 
 # RUN mkdir -p $GOPATH/src/github.com/google \
 #     && cd $GOPATH/src/github.com/google \

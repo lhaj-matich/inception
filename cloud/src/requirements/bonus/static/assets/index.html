@@ -4,10 +4,181 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio testing page</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-</head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Oussama Choumoul | Backend developer</title>
+<script defer src="chunk.531ced79f0816342119a.js"></script></head>
 <body>
-    <h1>Hello this is just a test page for the</h1>
+    <section class="home">
+        <div class="header">
+            <div class="header__card">
+                <div class="header__head">
+                    <img src="img/logo-1a0b8a866184e603c4f6.svg" alt="Logo" class="header__logo">
+                    <ul class="header__menu">
+                        <li class="header__menu--item"><a href="#" class="header__menu--link">About</a></li>
+                        <li class="header__menu--item"><a href="#" class="header__menu--link">What I Do</a></li>
+                        <li class="header__menu--item"><a href="#" class="header__menu--link">Projects</a></li>
+                        <li class="header__menu--item"><a href="#" class="header__menu--link">Let's talk</a></li>
+                    </ul>
+                </div>
+                <div class="header__body">
+                    <div class="header__body--left">
+                        <h3 class="heading__secondary">Hello, im oussama aka lhaj-matich</h3>
+                        <h1 class="heading__primary">I'm a backend dev i love creating apps and code is my passion</h1>
+                        <ul class="header__icons">
+                            <li><i class="header__icon fa-brands fa-github"></i></li>
+                            <li><i class="header__icon fa-brands fa-twitter"></i></li>
+                            <li><i class="header__icon fa-brands fa-linkedin-in"></i></li>
+                        </ul>
+                        <div class="header__cta">
+                            <a href="#" class="btn btn__primary">Projects</a>
+                            <a href="#" class="btn btn__secondary">Let's Talk!</a>
+                        </div>
+                    </div>
+                    <div class="header__body--right">
+                        <div class="header__portrait">
+                            <img src="img/person-f8c9a63ab67b28f54a2c.png" class="header__portrait--image" alt="Oussama choumoul profile picture">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about_me">
+            <h1 class="heading__title text--white">About me</h1>
+            <p class="text--normal text--white">Greetings, my name is Oussama Choumoul, and I am a skilled backend developer with a keen interest in frontend development. I am currently situated in the beautiful city of Marrakech, Morocco. Over the past few years, I have designed and developed various web applications, ranging from budget management systems to content service platforms. Currently, I am studying software development at 1337 school, and I am always on the lookout for new and exciting challenges. Let us collaborate and create something truly amazing together!</p>
+        </div>
+    </section>
+    <section class="showcase">
+        <div class="projects">
+            <h1 class="heading__title text--grey">Projects</h1>
+            <div class="projects__container">
+                <div class="card">
+                    <img class="card__image" src="img/project2-33dc4fcbcb0b49c2acb1.png" alt="Project  image">
+                    <div class="card__content">
+                        <div class="card__content--container">
+                            <div class="card__header">
+                                <h2 class="card__title">Forkify</h2>
+                                <div class="card__links">
+                                    <a href="#" class="card__links--icon"><i class="fa-brands fa-github"></i></a>
+                                    <a href="#" class="card__links--icon"><i class="fa-regular fa-eye"></i></a>
+                                </div>
+                            </div>
+                            <p class="card__description">
+                                This application runs on the client side and facilitates 
+                                the retrieval of ingredients for various recipes. 
+                                It communicates with an API to obtain the required data,
+                                which is then processed for display to the client.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card__image" src="img/project1-0c714b5b1ecd4aa750e1.png" alt="Project  image">
+                    <div class="card__content">
+                        <div class="card__content--container">
+                            <div class="card__header">
+                                <h2 class="card__title">E-etudiant</h2>
+                                <div class="card__links">
+                                    <a href="#" class="card__links--icon"><i class="fa-brands fa-github"></i></a>
+                                    <a href="#" class="card__links--icon"><i class="fa-regular fa-eye"></i></a>
+                                </div>
+                            </div>
+                            <p class="card__description">
+                                espace-etudiant is a platform that offers a repository of past exams complete with 
+                                corresponding solutions, as well as a venue for students to share
+                                and exchange documents.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card__image" src="img/project3-dd8ff208992caebbe7a9.png" alt="Project  image">
+                    <div class="card__content">
+                        <div class="card__content--container">
+                            <div class="card__header">
+                                <h2 class="card__title">FDF (mlx)</h2>
+                                <div class="card__links">
+                                    <a href="#" class="card__links--icon"><i class="fa-brands fa-github"></i></a>
+                                    <!-- <a href="#" class="card__links--icon"><i class="fa-regular fa-eye"></i></a> -->
+                                </div>
+                            </div>
+                            <p class="card__description">
+                                The objective of this project is to create a three-dimensional 
+                                model of a landscape by delineating all its surfaces with lines, 
+                                utilizing isometric projection and other projection techniques.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card__image" src="img/project4-353f3b57875cad40be47.png" alt="Project  image">
+                    <div class="card__content">
+                        <div class="card__content--container">
+                            <div class="card__header">
+                                <h2 class="card__title">Raycaster (mlx)</h2>
+                                <div class="card__links">
+                                    <a href="#" class="card__links--icon"><i class="fa-brands fa-github"></i></a>
+                                    <!-- <a href="#" class="card__links--icon"><i class="fa-regular fa-eye"></i></a> -->
+                                </div>
+                            </div>
+                            <p class="card__description">
+                                The aim of this project is to develop a game similar to Wolf 3D. 
+                                To achieve this goal, I had to create a basic raycasting engine 
+                                which enables the rendering of the walls, floor, and ceiling.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card__image" src="img/project5-a7d9cae9a81766c89f0f.png" alt="Project  image">
+                    <div class="card__content">
+                        <div class="card__content--container">
+                            <div class="card__header">
+                                <h2 class="card__title">WalletGuard</h2>
+                                <div class="card__links">
+                                    <a href="#" class="card__links--icon"><i class="fa-brands fa-github"></i></a>
+                                    <a href="#" class="card__links--icon"><i class="fa-regular fa-eye"></i></a>
+                                </div>
+                            </div>
+                            <p class="card__description">
+                                This project help devide your income and expenses 
+                                to help you better manage your money and give you
+                                a braod overview on your finnacial situation
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="resumee">
+        <div class="resumee__container">
+            <h1 class="heading__title text--white">Resumee</h1>
+            <div class="resumee__cta">
+                <p class="text--normal text--white u-margin-bottom-medium">here is where you can download my resumee in pdf, it is up to date with my work history and education</p>
+                <a href="#" class="btn btn__white btn__white--big">Download</a>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="contact__container">
+            <div class="contact__container--left">
+                <img src="img/contact-a69a7b712b162f73bd5e.svg" alt="Contact us illustration" class="contact__logo">
+            </div>
+            <div class="contact__container--right">
+                <h1 class="heading__title text--grey">Contact me</h1>
+                <input type="email" class="inputtext" name="email" id="email" placeholder="Email">
+                <textarea name="message" class="textarea" cols="30" rows="7" placeholder="Message"></textarea>
+                <a href="#" class="btn btn__primary">Sumbit</a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__container">
+            <img src="img/logo__white-a4f4899d38d7d6173276.svg" alt="Footer logo" class="footer__logo">
+            <p class="footer__copyright text--white">Oussama Choumoul &copy; 2023 </p>
+        </div>
+    </footer>
 </body>
 </html>
