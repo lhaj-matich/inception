@@ -3,7 +3,12 @@ version: '3'
 services:
   mariadb:
     container_name: mariadb
-    build: ./requirements/mariadb
+    build: 
+      context: ./requirements/mariadb
+      args:
+        MARIADB_DBNAME: ${MARIADB_DBNAME}
+        MARIADB_PASS: ${MARIADB_PASS}
+        MARIADB_USER: ${MARIADB_USER}
     volumes:
       - mariadb:/var/lib/mysql
     ports:
@@ -29,12 +34,13 @@ services:
 
   wordpress:
     container_name: wordpress
-    build: ./requirements/wordpress
-    environment:
-      MARIADB_DBNAME: wordpress
-      MARIADB_USER: wp_user
-      MARIADB_PASS: biden_1234
-      MARIADB_HOST: mariadb:3306
+    build: 
+      context: ./requirements/wordpress
+      args:
+        MARIADB_DBNAME: ${MARIADB_DBNAME}
+        MARIADB_PASS: ${MARIADB_PASS}
+        MARIADB_USER: ${MARIADB_USER}
+        MARIADB_HOST: ${MARIADB_HOST}
     volumes:
       - wpdata:/var/www/html/wordpress
     depends_on:
@@ -98,7 +104,11 @@ services:
 
   ftp:
     container_name: ftp
-    build: ./requirements/bonus/ftp
+    build: 
+      context: ./requirements/bonus/ftp
+      args:
+        - FTP_USER=${FTP_USER}
+        - FTP_PASS=${FTP_PASS}
     depends_on:
       - nginx
       - wordpress

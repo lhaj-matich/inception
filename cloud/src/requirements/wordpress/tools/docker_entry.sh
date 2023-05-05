@@ -2,11 +2,6 @@
 
 #! Check no to run this script everytime the container starts.
 #DEBUG: need to remove later because these are going to set by docker compose.
-export MARIADB_USER="wp_user"
-export MARIADB_PASS="biden_1234"
-export MARIADB_HOST="mariadb:3306"
-export MARIADB_DBNAME="wordpress"
-
 #DEBUG: php-fpm should be included into the image because it takes more time
 mkdir -p /run/php
 sed -i "s/\/run\/php\/php7.4-fpm.sock/0.0.0.0:9000/g" /etc/php/7.4/fpm/pool.d/www.conf

@@ -1,8 +1,4 @@
 #!/bin/sh
-# Add FTP_USER and FTP_PASS variables for the script to use
-
-export FTP_USER="wp_user"
-export FTP_PASS="biden_1234"
 
 # Add the user that will be responsible for logging in
 
