@@ -41,6 +41,8 @@ services:
         MARIADB_PASS: ${MARIADB_PASS}
         MARIADB_USER: ${MARIADB_USER}
         MARIADB_HOST: ${MARIADB_HOST}
+        WP_USER: ${WP_USER}
+        WP_PASS: ${WP_PASS}
     volumes:
       - wpdata:/var/www/html/wordpress
     depends_on:
