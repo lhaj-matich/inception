@@ -12,6 +12,7 @@ ENV MARIADB_HOST=${MARIADB_HOST}
 ENV WP_USER=${WP_USER}
 ENV WP_PASS=${WP_PASS}
 
+COPY ./conf/wp-config-sample.php .
 COPY ./tools/setup_wp.sh .
 COPY ./tools/docker_entry.sh .
 RUN chmod +x setup_wp.sh

@@ -65,6 +65,7 @@ define( 'NONCE_SALT',       'put your unique phrase here' );
 /**#@-*/
 define('WP_CACHE', true);
 define('WP_REDIS_CLIENT', 'phpredis');
+define('WP_REDIS_SCHEME', 'tcp');
 define('WP_REDIS_HOST', 'redis');
 define('WP_REDIS_PORT', '6379');
 define('WP_REDIS_DATABASE', '0');
