@@ -1,4 +1,4 @@
-FROM debian:11.6
+FROM debian:buster
 
 RUN apt update && apt install redis -y
 WORKDIR /tmp

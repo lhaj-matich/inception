@@ -1,4 +1,4 @@
-FROM debian:11.6
+FROM debian:buster
 RUN apt update && apt install -y mariadb-server
 #...
 ARG MARIADB_PASS MARIADB_DBNAME MARIADB_USER
