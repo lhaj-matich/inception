@@ -74,9 +74,6 @@ services:
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
-    depends_on:
-      - wordpress
-      - mariadb
     ports:
       - 8080:8080
     restart: always
@@ -95,9 +92,6 @@ services:
   redis:
     container_name: redis
     build: ./requirements/bonus/redis
-    depends_on:
-      - nginx
-      - mariadb
     ports:
       - 6379:6379
     restart: always
@@ -134,11 +128,11 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/ochoumou/inception-data/wordpress
+      device: /home/sn4r7/docker/wordpress
   mariadb:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/ochoumou/inception-data/mysql
+      device: /home/sn4r7/docker/sql
 
