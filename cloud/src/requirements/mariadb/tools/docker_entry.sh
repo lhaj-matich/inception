@@ -10,5 +10,5 @@ chmod +x wp_setup.sh
 # Stop the execution for a few seconds
 sleep ${SLEEP_TIME}
 # Stop mariadb service.
-service mariadb stop
+service mysql stop
 # Start mariadb server in the foreground.

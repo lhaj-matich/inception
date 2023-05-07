@@ -2,7 +2,7 @@
 
 mkdir -p /run/php
 mkdir -p /var/www/html/wordpress
-sed -i "s/\/run\/php\/php7.4-fpm.sock/0.0.0.0:9000/g" /etc/php/7.4/fpm/pool.d/www.conf
+sed -i "s/\/run\/php\/php7.3-fpm.sock/0.0.0.0:9000/g" /etc/php/7.3/fpm/pool.d/www.conf
 
 if [ ! -e "/usr/local/bin/wp" ]; then
     wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar

@@ -11,4 +11,4 @@ if ! wp core is-installed --path=$WORDPRESS_PATH --allow-root; then
 fi
 
 echo "Wordpress is listenning on port 9000"
-exec php-fpm7.4 -F -R
+exec php-fpm7.3 -F -R
