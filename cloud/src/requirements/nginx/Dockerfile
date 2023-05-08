@@ -9,9 +9,6 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 COPY ./conf/nginx.conf /etc/nginx/
 COPY ./conf/self-signed.conf /etc/nginx/snippets/
 COPY ./conf/ssl-params.conf /etc/nginx/snippets/
-#! Only testing....
-COPY ./assets .
-# Another comment...
 EXPOSE 443
 # This command will run nginx in no demaon mode....
 CMD ["nginx", "-g", "daemon off;"]
