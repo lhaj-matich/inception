@@ -34,3 +34,5 @@ Nginx ssl config:
 
 + add_header X-XSS-Protection "1; mode=block";: Adds a response header to enable the browser's XSS (cross-site scripting) protection.
 
+https://cdimage.ubuntu.com/lubuntu/releases/18.04/release/
+https://download.docker.com/linux/ubuntu/dists/bionic/pool/stable/amd64/
