@@ -128,11 +128,11 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/sn4r7/docker/wordpress
+      device: /home/ochoumou/data/wordpress
   mariadb:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/sn4r7/docker/sql
+      device: /home/ochoumou/data/sql
 
