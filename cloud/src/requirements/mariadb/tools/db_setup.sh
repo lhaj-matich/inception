@@ -7,7 +7,7 @@ if [ $RESULT -eq 0 ]; then
   service mysql start
 fi
 
-# .Delete anonymous users.,.....
+# Delete anonymous users
 mysql -e "DELETE FROM mysql.user WHERE user='';"
 # Ensure the root user can not log in remotely
 mysql -e "DELETE FROM mysql.user WHERE user='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');"
@@ -15,7 +15,6 @@ mysql -e "DELETE FROM mysql.user WHERE user='root' AND Host NOT IN ('localhost',
 mysql -e "DROP DATABASE IF EXISTS test;"
 mysql -e "DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';"
 # Creating new user with root privileges and allow remote connection.
-# mariadb -e "GRANT ALL ON *.* TO '${MARIADB_ADMIN}'@'%' IDENTIFIED BY '${MARIADB_PASS}' WITH GRANT OPTION;"
 mysql -e "GRANT ALL ON *.* TO '${WP_USER}'@'%' IDENTIFIED BY '${MARIADB_PASS}' WITH GRANT OPTION;"
 # Commit the changes.
 mysql -e "FLUSH PRIVILEGES;"
