@@ -16,4 +16,4 @@ fi
 # exec vsftpd
 echo "FTP is listenning on port 21"
 /usr/sbin/vsftpd
-# Start the vsftp server in the forground
+# Start the vsftp server in the foreground
