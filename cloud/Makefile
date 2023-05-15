@@ -4,14 +4,13 @@ dep:
 	mkdir -p /home/ochoumou/data/sql
 	mkdir -p /home/ochoumou/data/wordpress
 
-run:
-	docker compose -p inception up
+run: dep
+	docker compose -f ./src/docker-compose.yaml up
 
 clean: 
 	docker compose -p inception down --rmi all
-	docker volume rm inception_wpdata inception_mariadb
-	rm -rf /home/ochoumou/data/sql/*
-	rm -rf /home/ochoumou/data/wordpress/*
-
+	docker volume prune -f
+	rm -rf /home/ochoumou/data/
+	
 re:
 	run clean
