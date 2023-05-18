@@ -1,19 +1,17 @@
 all: dep run 
 
 dep:
-	@sudo mkdir -p /home/ochoumou/data/sql
-	@sudo mkdir -p /home/ochoumou/data/wordpress
+	mkdir -p /home/ochoumou/data/sql
+	mkdir -p /home/ochoumou/data/wordpress
 
 run: dep
-	@sudo docker compose -f "./srcs/docker-compose.yml" up
+	docker compose -f "./srcs/docker-compose.yml" up
 
 clean: 
-	@sudo docker compose -f "./srcs/docker-compose.yml" down --rmi all
-	@sudo docker stop $$(sudo docker ps -q)
-	@sudo docker rmi -f $$(sudo docker images )
-	@sudo docker volume rm $$(sudo docker volume ls -q)
-	@sudo docker volume rm $$(sudo docker volume ls -q)
-	@sudo rm -rf /home/ochoumou/data/
+	docker compose -f "./srcs/docker-compose.yml" down --rmi all
+	docker volume prune -f
+	docker network prune -f
+	rm -rf /home/ochoumou/data/
 	
 re:
 	run clean
