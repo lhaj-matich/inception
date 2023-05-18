@@ -5,11 +5,12 @@ dep:
 	mkdir -p /home/ochoumou/data/wordpress
 
 run: dep
-	docker compose -f "./src/docker-compose.yml" up
+	docker compose -f "./srcs/docker-compose.yml" up
 
 clean: 
-	docker compose -f "./src/docker-compose.yml" down --rmi all
+	docker compose -f "./srcs/docker-compose.yml" down --rmi all
 	docker volume prune -f
+	docker network prune -f
 	rm -rf /home/ochoumou/data/
 	
 re:
